@@ -1,75 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Product+Sans:wght@400;500;700&display=swap');
 
-/* ── Reset & Base ─────────────────────────────── */
+/* ── Reset ───────────────────────────────────── */
 *,
 *::before,
 *::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
 :root {
-    --play-green: #01875f;
-    --play-blue: #1a73e8;
-    --play-blue-hover: #1557b0;
-    --play-bg: #ffffff;
-    --play-surface: #f8f9fa;
-    --play-border: #e0e0e0;
-    --play-text: #202124;
-    --play-text-secondary: #5f6368;
-    --play-text-tertiary: #80868b;
-    --play-link: #1a73e8;
-    --play-star: #e8710a;
-    --radius: 8px;
-    --radius-lg: 12px;
-    --radius-xl: 20px;
-    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
-    --transition: 0.2s ease;
-    --max-width: 920px;
+    --bg: #fff;
+    --surface: #f8f9fa;
+    --border: #dadce0;
+    --text: #202124;
+    --text2: #5f6368;
+    --text3: #80868b;
+    --blue: #1a73e8;
+    --blue-h: #1557b0;
+    --green: #01875f;
+    --star: #e8710a;
+    --r: 8px;
+    --rl: 12px;
+    --rx: 20px;
 }
 
 html {
-    scroll-behavior: smooth;
-    font-size: 16px;
+    scroll-behavior: smooth
 }
 
 body {
-    font-family: 'Roboto', 'Google Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--play-bg);
-    color: var(--play-text);
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
     line-height: 1.5;
-    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: inherit
 }
 
 img {
-    max-width: 100%;
     display: block;
+    max-width: 100%
 }
 
 button {
     border: none;
     cursor: pointer;
     font-family: inherit;
+    background: none
 }
 
-/* ── Top Bar ──────────────────────────────────── */
+/* ── Top Bar ─────────────────────────────────── */
 .topbar {
     position: sticky;
     top: 0;
-    z-index: 100;
-    background: var(--play-bg);
-    border-bottom: 1px solid var(--play-border);
-    padding: 12px 16px;
+    z-index: 50;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 16px;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
 }
 
 .topbar-search {
@@ -77,118 +72,104 @@ button {
     display: flex;
     align-items: center;
     gap: 12px;
-    background: var(--play-surface);
+    background: var(--surface);
     border-radius: 24px;
     padding: 10px 16px;
-    border: 1px solid transparent;
-    transition: var(--transition);
 }
 
-.topbar-search:hover {
-    border-color: var(--play-border);
-}
-
-.topbar-search .search-icon {
-    color: var(--play-text-secondary);
-    font-size: 20px;
+.topbar-search svg {
     flex-shrink: 0;
+    color: var(--text2)
 }
 
 .topbar-search input {
     border: none;
     outline: none;
-    background: transparent;
+    background: none;
     font-size: 16px;
-    color: var(--play-text);
     width: 100%;
     font-family: inherit;
+    color: var(--text);
 }
 
 .topbar-search input::placeholder {
-    color: var(--play-text-tertiary);
+    color: var(--text3)
 }
 
 .topbar-avatar {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: var(--play-blue);
-    color: white;
+    background: var(--blue);
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 500;
     font-size: 14px;
+    font-weight: 500;
     flex-shrink: 0;
 }
 
-/* ── Main Content ─────────────────────────────── */
-.play-page {
-    max-width: var(--max-width);
+/* ── Page Container ──────────────────────────── */
+.page {
+    max-width: 960px;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0 16px
 }
 
-/* ── App Header ───────────────────────────────── */
+/* ── App Header ──────────────────────────────── */
 .app-header {
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    padding: 24px 0 16px;
+    padding: 24px 0 12px;
 }
 
 .app-icon {
     width: 72px;
     height: 72px;
-    border-radius: var(--radius-xl);
-    overflow: hidden;
+    border-radius: var(--rx);
     flex-shrink: 0;
-    box-shadow: var(--shadow-card);
-    background: linear-gradient(135deg, #FFD54F 0%, #F5A623 50%, #E8961A 100%);
+    background: linear-gradient(135deg, #FFD54F, #F5A623, #E8961A);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 36px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
 }
 
-.app-info h1 {
-    font-family: 'Google Sans', 'Roboto', sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    color: var(--play-text);
+.app-info-block h1 {
+    font-size: 22px;
+    font-weight: 400;
     line-height: 1.3;
     margin-bottom: 2px;
 }
 
 .app-developer {
     font-size: 14px;
-    color: var(--play-link);
+    color: var(--blue);
     font-weight: 500;
+    display: block;
     margin-bottom: 4px;
-    display: inline-block;
-}
-
-.app-developer:hover {
-    text-decoration: underline;
 }
 
 .app-contains {
     font-size: 12px;
-    color: var(--play-text-tertiary);
+    color: var(--text3)
 }
 
-/* ── Meta Row ─────────────────────────────────── */
+/* ── Meta Row ────────────────────────────────── */
 .meta-row {
     display: flex;
-    align-items: stretch;
-    gap: 0;
+    align-items: center;
     padding: 16px 0;
     overflow-x: auto;
+    -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
 .meta-row::-webkit-scrollbar {
-    display: none;
+    display: none
 }
 
 .meta-item {
@@ -196,496 +177,449 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: 90px;
-    padding: 0 16px;
-    border-right: 1px solid var(--play-border);
-    gap: 4px;
+    padding: 0 20px;
+    gap: 2px;
+    border-right: 1px solid var(--border);
+    min-width: 80px;
+}
+
+.meta-item:first-child {
+    padding-left: 0
 }
 
 .meta-item:last-child {
-    border-right: none;
+    border-right: none
 }
 
-.meta-item .meta-primary {
-    font-size: 14px;
+.meta-val {
+    font-size: 15px;
     font-weight: 500;
-    color: var(--play-text);
+    color: var(--text);
     display: flex;
     align-items: center;
     gap: 2px;
     white-space: nowrap;
 }
 
-.meta-item .meta-primary .star {
-    color: var(--play-star);
+.meta-val .star {
     font-size: 12px;
+    color: var(--star)
 }
 
-.meta-item .meta-secondary {
+.meta-label {
     font-size: 12px;
-    color: var(--play-text-tertiary);
-    white-space: nowrap;
+    color: var(--text3);
+    white-space: nowrap
 }
 
-.meta-icon {
-    font-size: 18px;
-    color: var(--play-text-secondary);
+.age-badge {
+    display: inline-block;
+    border: 1.5px solid var(--text2);
+    border-radius: 3px;
+    padding: 0 4px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
 }
 
-/* ── Install Button ───────────────────────────── */
+/* ── Install Button ──────────────────────────── */
 .install-section {
-    padding: 8px 0 20px;
+    padding: 4px 0 16px
 }
 
 .install-btn {
+    display: block;
     width: 100%;
-    padding: 14px 24px;
-    background: var(--play-blue);
-    color: white;
-    border-radius: var(--radius);
+    padding: 13px 24px;
+    background: var(--blue);
+    color: #fff;
+    border-radius: var(--r);
     font-size: 14px;
     font-weight: 500;
-    letter-spacing: 0.25px;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    text-decoration: none;
+    letter-spacing: .25px;
+    text-align: center;
+    transition: background .15s;
 }
 
 .install-btn:hover {
-    background: var(--play-blue-hover);
-    box-shadow: 0 1px 3px rgba(26, 115, 232, 0.3);
+    background: var(--blue-h)
 }
 
-.install-btn:active {
-    transform: scale(0.99);
-}
-
-.install-row {
+.install-actions {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-top: 12px;
+    gap: 8px;
+    margin-top: 10px;
 }
 
-.install-row .icon-btn {
+.icon-btn {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    color: var(--play-text-secondary);
-    transition: var(--transition);
+    color: var(--text2);
+    transition: background .15s;
 }
 
-.install-row .icon-btn:hover {
-    background: var(--play-surface);
+.icon-btn:hover {
+    background: var(--surface)
 }
 
-.install-row .device-label {
-    font-size: 12px;
-    color: var(--play-text-tertiary);
+.device-info {
     margin-left: auto;
+    font-size: 12px;
+    color: var(--text3);
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
-/* ── Screenshots Carousel ─────────────────────── */
-.screenshots-section {
-    padding: 8px 0 24px;
+/* ── Screenshots ─────────────────────────────── */
+.screenshots {
+    padding: 8px 0 20px
 }
 
-.screenshots-track {
+.ss-track {
     display: flex;
     gap: 8px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
     scrollbar-width: none;
-    padding-bottom: 8px;
+    padding-bottom: 4px;
 }
 
-.screenshots-track::-webkit-scrollbar {
-    display: none;
+.ss-track::-webkit-scrollbar {
+    display: none
 }
 
-.screenshot-item {
+.ss-item {
     flex: 0 0 auto;
     scroll-snap-align: start;
-    border-radius: var(--radius-lg);
+    border-radius: var(--rl);
     overflow: hidden;
-    box-shadow: var(--shadow-card);
-    transition: transform 0.2s ease;
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, .08);
 }
 
-.screenshot-item:hover {
-    transform: scale(1.02);
-}
-
-.screenshot-item img {
-    height: 330px;
+.ss-item img {
+    height: 320px;
     width: auto;
     object-fit: cover;
     display: block;
 }
 
-/* ── About Section ────────────────────────────── */
-.about-section {
-    padding: 24px 0;
-    border-top: 1px solid var(--play-border);
+/* ── Section Commons ─────────────────────────── */
+.section {
+    padding: 20px 0;
+    border-top: 1px solid var(--border)
 }
 
-.section-title-row {
+.section-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 12px;
 }
 
-.section-title-row h2 {
-    font-family: 'Google Sans', 'Roboto', sans-serif;
-    font-size: 18px;
+.section-head h2 {
+    font-size: 17px;
     font-weight: 500;
-    color: var(--play-text);
+    color: var(--text)
 }
 
-.section-arrow {
+.arrow-btn {
     width: 36px;
     height: 36px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
-    color: var(--play-text-secondary);
-    transition: var(--transition);
-    background: transparent;
+    color: var(--text2);
+    font-size: 20px;
+    transition: background .15s;
 }
 
-.section-arrow:hover {
-    background: var(--play-surface);
+.arrow-btn:hover {
+    background: var(--surface)
 }
 
-.about-text {
+/* ── About ───────────────────────────────────── */
+.about-desc {
     font-size: 14px;
-    color: var(--play-text-secondary);
+    color: var(--text2);
     line-height: 1.6;
-    margin-bottom: 16px;
+    margin-bottom: 14px
 }
 
-.about-tags {
+.tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 8px
 }
 
 .tag {
     font-size: 13px;
-    color: var(--play-text-secondary);
+    color: var(--text2);
     padding: 6px 14px;
-    border: 1px solid var(--play-border);
+    border: 1px solid var(--border);
     border-radius: 20px;
-    background: transparent;
-    transition: var(--transition);
+    transition: background .15s;
 }
 
 .tag:hover {
-    background: var(--play-surface);
+    background: var(--surface)
 }
 
-/* ── Data Safety Section ──────────────────────── */
-.data-safety {
-    padding: 24px 0;
-    border-top: 1px solid var(--play-border);
-}
-
-.data-safety-body {
+/* ── Data Safety ─────────────────────────────── */
+.ds-body {
     font-size: 14px;
-    color: var(--play-text-secondary);
+    color: var(--text2);
     line-height: 1.6;
-    margin-bottom: 16px;
+    margin-bottom: 14px
 }
 
-.data-safety-card {
-    border: 1px solid var(--play-border);
-    border-radius: var(--radius-lg);
-    padding: 16px;
+.ds-card {
+    border: 1px solid var(--border);
+    border-radius: var(--rl);
+    overflow: hidden
 }
 
-.safety-item {
+.ds-row {
     display: flex;
     align-items: flex-start;
-    gap: 16px;
-    padding: 12px 0;
+    gap: 14px;
+    padding: 14px 16px;
 }
 
-.safety-item:not(:last-child) {
-    border-bottom: 1px solid var(--play-border);
+.ds-row+.ds-row {
+    border-top: 1px solid var(--border)
 }
 
-.safety-icon {
-    font-size: 22px;
-    color: var(--play-text-secondary);
+.ds-row svg {
     flex-shrink: 0;
-    margin-top: 1px;
+    color: var(--text2);
+    margin-top: 2px
 }
 
-.safety-text {
+.ds-text {
     font-size: 14px;
-    color: var(--play-text);
-    line-height: 1.5;
+    color: var(--text);
+    line-height: 1.5
 }
 
-.safety-text span {
+.ds-text small {
     display: block;
     font-size: 12px;
-    color: var(--play-text-tertiary);
-    margin-top: 2px;
+    color: var(--text3);
+    margin-top: 2px
 }
 
-.data-safety-link {
+.ds-link {
     display: inline-block;
-    color: var(--play-link);
+    margin-top: 14px;
     font-size: 14px;
     font-weight: 500;
-    margin-top: 16px;
-    padding: 8px 0;
-    transition: var(--transition);
+    color: var(--blue);
 }
 
-.data-safety-link:hover {
-    text-decoration: underline;
-}
-
-/* ── Ratings & Reviews ────────────────────────── */
-.ratings-section {
-    padding: 24px 0;
-    border-top: 1px solid var(--play-border);
-}
-
-.ratings-overview {
+/* ── Ratings ─────────────────────────────────── */
+.ratings-wrap {
     display: flex;
     align-items: flex-start;
     gap: 24px;
-    margin-bottom: 20px;
+    margin-top: 4px
 }
 
-.rating-big {
+.rating-left {
     text-align: center;
+    min-width: 80px
 }
 
-.rating-big .number {
-    font-family: 'Google Sans', sans-serif;
-    font-size: 56px;
-    font-weight: 400;
-    color: var(--play-text);
-    line-height: 1;
+.rating-num {
+    font-size: 52px;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1
 }
 
-.rating-stars {
-    display: flex;
-    gap: 2px;
-    justify-content: center;
-    margin: 4px 0;
-    font-size: 14px;
-    color: var(--play-star);
+.stars {
+    font-size: 13px;
+    color: var(--star);
+    margin: 4px 0 2px;
+    letter-spacing: 1px
 }
 
-.rating-count {
+.rev-count {
     font-size: 12px;
-    color: var(--play-text-tertiary);
+    color: var(--text3)
 }
 
-.rating-bars {
+.bars {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    padding-top: 8px;
+    gap: 5px;
+    padding-top: 6px
 }
 
-.rating-bar-row {
+.bar-row {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 8px
 }
 
-.rating-bar-row .label {
+.bar-row span {
     font-size: 12px;
-    color: var(--play-text-tertiary);
+    color: var(--text3);
     width: 8px;
-    text-align: right;
+    text-align: right
 }
 
-.bar-track {
+.bar-bg {
     flex: 1;
     height: 10px;
     background: #e8eaed;
     border-radius: 5px;
-    overflow: hidden;
+    overflow: hidden
 }
 
-.bar-fill {
+.bar-fg {
     height: 100%;
-    background: var(--play-green);
-    border-radius: 5px;
-    transition: width 1s ease;
+    background: var(--green);
+    border-radius: 5px
 }
 
-/* ── What's New ───────────────────────────────── */
-.whats-new {
-    padding: 24px 0;
-    border-top: 1px solid var(--play-border);
-}
-
-.version-label {
+/* ── What's New ──────────────────────────────── */
+.ver {
     font-size: 12px;
-    color: var(--play-text-tertiary);
-    margin-bottom: 8px;
+    color: var(--text3);
+    margin-bottom: 6px
 }
 
-.whats-new-body {
+.wn-body {
     font-size: 14px;
-    color: var(--play-text-secondary);
-    line-height: 1.6;
+    color: var(--text2);
+    line-height: 1.7
 }
 
-/* ── App Info Grid ────────────────────────────── */
-.app-info-section {
-    padding: 24px 0;
-    border-top: 1px solid var(--play-border);
-}
-
+/* ── App Info Grid ───────────────────────────── */
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
-    margin-top: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px;
+    margin-top: 10px;
 }
 
-.info-item .info-label {
+.info-cell .lbl {
     font-size: 12px;
-    color: var(--play-text-tertiary);
-    margin-bottom: 4px;
+    color: var(--text3);
+    margin-bottom: 3px
 }
 
-.info-item .info-value {
+.info-cell .val {
     font-size: 14px;
-    color: var(--play-text);
-    font-weight: 400;
+    color: var(--text)
 }
 
-/* ── Footer ───────────────────────────────────── */
+/* ── Footer ──────────────────────────────────── */
 .play-footer {
-    margin-top: 24px;
-    padding: 24px 0;
-    border-top: 1px solid var(--play-border);
+    margin-top: 20px;
+    border-top: 1px solid var(--border);
+    padding: 20px 16px;
 }
 
-.play-footer-content {
-    max-width: var(--max-width);
+.footer-inner {
+    max-width: 960px;
     margin: 0 auto;
-    padding: 0 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 14px;
 }
 
 .footer-logo {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
-    color: var(--play-text-secondary);
+    color: var(--text2);
 }
 
-.footer-logo svg {
-    width: 24px;
-    height: 24px;
-}
-
-.footer-links {
+.footer-nav {
     display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
+    gap: 20px;
+    flex-wrap: wrap
 }
 
-.footer-links a {
+.footer-nav a {
     font-size: 12px;
-    color: var(--play-text-tertiary);
-    transition: var(--transition);
+    color: var(--text3);
+    transition: color .15s
 }
 
-.footer-links a:hover {
-    color: var(--play-text);
+.footer-nav a:hover {
+    color: var(--text)
 }
 
-.footer-bottom {
-    max-width: var(--max-width);
-    margin: 12px auto 0;
-    padding: 0 16px;
+.footer-copy {
+    max-width: 960px;
+    margin: 10px auto 0;
     font-size: 12px;
-    color: var(--play-text-tertiary);
+    color: var(--text3);
 }
 
-/* ── Responsive ───────────────────────────────── */
-@media (min-width: 700px) {
+/* ── Responsive ──────────────────────────────── */
+@media(min-width:700px) {
     .app-header {
-        gap: 24px;
-        padding: 32px 0 20px;
+        padding: 28px 0 16px
     }
 
     .app-icon {
         width: 84px;
         height: 84px;
-        font-size: 42px;
+        font-size: 42px
     }
 
-    .app-info h1 {
-        font-size: 28px;
+    .app-info-block h1 {
+        font-size: 26px
     }
 
     .install-btn {
-        max-width: 320px;
+        max-width: 260px
     }
 
-    .screenshot-item img {
-        height: 400px;
+    .ss-item img {
+        height: 400px
     }
 }
 
-@media (max-width: 480px) {
-    .topbar {
-        padding: 8px 12px;
-    }
-
-    .play-page {
-        padding: 0 12px;
-    }
-
+@media(max-width:480px) {
     .meta-item {
-        min-width: 72px;
-        padding: 0 10px;
+        padding: 0 12px;
+        min-width: 68px
     }
 
-    .ratings-overview {
-        flex-direction: column;
-        align-items: stretch;
+    .ratings-wrap {
+        flex-direction: column
     }
 
-    .rating-big {
+    .rating-left {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
+        text-align: left
     }
 
-    .rating-big .number {
-        font-size: 40px;
+    .rating-num {
+        font-size: 40px
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start
     }
 }
